@@ -11,6 +11,7 @@ I would also reccomend for whatever item you are grading whether that be a lab o
 │   │   ├── README.md
 │   │   ├── setup.sh
 │   │   ├── taskreplacer.sh
+|   |   ├── tasks.json
 │   ├── Lab03_Submissions
 │   ├── HW01_Submissions
 │   ├── Lab05_Submissions
@@ -18,6 +19,11 @@ I would also reccomend for whatever item you are grading whether that be a lab o
 Or don't do that! You have free will.
 
 ## Setup Instructions
+
+### 1. Setup a WSL terminal
+This library uses bash scripts to do all their file manipulation, so having a terminal that allows you to
+use UNIX commands will make things a lot simpler. If you're on Windows, make sure you have WSL 2 enabled
+and have Ubuntu installed.
 
 ### 1. Download or clone the repo
 cd into the directory you wish to place the cs2261-grading-suite in and...
@@ -33,7 +39,19 @@ Navigate to the drop-down icon that is next to the plus sign on the right hand s
 When you click the drop-down icon, there should be a "Ubuntu (WSL)" option. Click on that to open up a WSL terminal.
 
 In your terminal line, there should be a folder path to the directory that you are currently working on (cs2261-grading-suite).
-If not, cd into that folder.
+If not, use this command to navigate to that folder. 
+
+```
+cd folderName
+```
+
+If you can't see the full filepath to the folder you're in in your terminal, use this command to view it:
+
+```
+pwd
+```
+
+Also, make sure your filepath doesn't have any spaces in it! There's probably a way around this, but as of now we haven't found it.
 
 ### 4. Edit your setup.sh
 Open up your setup.sh file and focus on these 2 lines.
@@ -45,11 +63,11 @@ basefolder="/mnt/c/Users/lwalt/Desktop/External/CS2261/Grading/Lab_04_Submission
 # Absolute path to tasks.json
 mytasks="/mnt/c/Users/lwalt/Desktop/External/CS2261/Grading/tasks.json"
 ```
-Remember that folder path earlier in the terminal that starts with /mnt/blah blah blah? Ctrl+C that folder path.
-> Replace "/mnt/c/Users/lwalt/Desktop/External/CS2261/Grading/Lab_04_Submissions/" and "/mnt/c/Users/lwalt/Desktop/External/CS2261/Grading/tasks.json" with "/mnt/blah blah blah". It should end with /cs2261-grading-suite.
 
-Edit the mytaks file path to lead to your tasks.json file that is inside your cs2261-grading-suite from earlier.
-Your mytasks path should probably look like "/mnt/..../cs2261-grading-suite/tasks.json
+Remember that folder path we just found? Ctrl+C it.
+> Replace "/mnt/c/Users/lwalt/Desktop/External/CS2261/Grading/Lab_04_Submissions/" and "/mnt/c/Users/lwalt/Desktop/External/CS2261/Grading/tasks.json" with filepaths that lead to your basefolder and tasks respectively.
+
+Edit the mytasks file path to lead to your tasks.json file that is inside your cs2261-grading-suite from earlier.
 
 Edit your basefolder file path to lead to where you want the code to work. Aka all of the students' zip files that is hopefully in a neat folder that you can edit your basefolder path to
 > Note: Your basefolder file path is likely changing for every assignment since you are grading in different folders!
@@ -58,6 +76,20 @@ Edit your basefolder file path to lead to where you want the code to work. Aka a
 Alright so you have the downloaded students' zip files in some folder called idk Lab03. Your basefolder should look something like "/mnt.../Lab03". 
 Open up your WSL terminal and cd into the cs2261-grading-suite if you haven't already.
 In your WSL terminal, type:
-`./setup.sh`
+
+```
+./setup.sh
+```
+
 The script should automatically unzip all of the zip files AND replace their tasks.json with your own tasks.json.
 You should be done yay!
+
+### 6. Troubleshooting
+Here's a list of possible issues you may have when trying to run the scripts for the first time:
+
+- Insufficient permissions
+  > Use the `chmod 777 fileName` command on each of the bash scripts to update their permissions to a state where you can read, write, and execute them.
+  
+- Bulkunzipper.sh script not found
+  > This occurs because this script uses commands that aren't included in base UNIX. Use the `sudo apt-get install zip unzip` command to install them on your computer.
+  
