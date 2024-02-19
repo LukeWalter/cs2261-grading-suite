@@ -9,8 +9,13 @@ use UNIX commands will make things a lot simpler. If you're on Windows, make sur
 and have Ubuntu installed.
 
 ### 2. Download or clone the repo
-cd into the directory you wish to place the cs2261-grading-suite in and...
-`git clone https://github.com/LukeWalter/cs2261-grading-suite.git`
+cd into the directory you wish to place the cs2261-grading-suite in and use this command in your command line:
+```
+git clone https://github.com/LukeWalter/cs2261-grading-suite.git
+```
+
+If you hate using the command line, you could alternatively follow the link for this repo and download everything 
+directly from the site.
 
 ### 3. Get your tasks.json 
 I am assuming you have a .vscode folder that contains the tasks.json that works for your computer... Anyway.
