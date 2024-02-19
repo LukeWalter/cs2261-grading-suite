@@ -47,9 +47,6 @@ student submission. In order to unzip it and inject your tasks.json, you'll need
 
 On your first time running this script, you're likely to run into a few issues. Here's the ones we've identified so far
 and how to fix them:
-# chmod 777 taskreplacer.sh bulkunzipper.sh setup.sh           | (Permissions denied)
-# sudo apt-get install zip unzip                               | (Unzip script not found)
-# sed -i -e 's/\r$//' taskreplacer.sh bulkunzipper.sh setup.sh | (Bad interpreter)
 
 #### Permissions Denied
 
