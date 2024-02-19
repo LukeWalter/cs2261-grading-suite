@@ -106,7 +106,7 @@ where this base folder should be placed for the easiest results:
 │   ├── README.md (You are here!)
 ```
 
-You can put them in a different spot if you want, but it would make the next step harder as it would likely require you to
+You can put them in a different spot if you want, but it would make the next steps harder as it would likely require you to
 get that folder's absolute filepath.
 
 ### 2. Download ZIP submissions from Canvas into your base folder
