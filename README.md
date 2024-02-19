@@ -129,7 +129,7 @@ basefolder="../Example_Submissions/"
 Go ahead and change the name of "Example_Submissions" (or whatever's there at the time you're doing this) to the name
 of the base folder you're using.
 
-> Note: Your basefolder file path is likely changing for every assignment since you are grading in different folders!
+> Note: Your basefolder file path is likely changing for every assignment if you are grading in different folders!
 
 ### 4. Grading time!
 
@@ -139,7 +139,7 @@ In your WSL terminal, make sure that you're working in the Scripts folder. Then 
 ./setup.sh
 ```
 
-The script should automatically unzip all of the zip files AND replace their tasks.json with your own tasks.json.
+The script should automatically unzip all of the ZIP files AND replace their tasks.json with your own tasks.json.
 Now you're ready to grade!
 
 ![Yippee!](https://media1.tenor.com/m/g16jQZqbvWoAAAAC/yippee-happy.gif)
