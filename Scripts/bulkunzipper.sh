@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# sudo apt-get install zip unzip
-
 basefolder=$1
 
 shopt -s nullglob

@@ -1,7 +1,8 @@
 #!/bin/bash
 
 basefolder=$1
-mytasks=$2
+mytasks=$(realpath $2)
+echo $mytasks
 
 findTasks () {
 

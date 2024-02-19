@@ -21,7 +21,7 @@ Or don't do that! You have free will.
 ## Setup Instructions
 
 ### 1. Setup a WSL terminal
-This library uses bash scripts to do all their file manipulation, so having a terminal that allows you to
+This library uses bash scripts to manipulation files, so having a terminal that allows you to
 use UNIX commands will make things a lot simpler. If you're on Windows, make sure you have WSL 2 enabled
 and have Ubuntu installed.
 
@@ -84,12 +84,15 @@ In your WSL terminal, type:
 The script should automatically unzip all of the zip files AND replace their tasks.json with your own tasks.json.
 You should be done yay!
 
-### 6. Troubleshooting
+### 6. UNIX Troubleshooting
 Here's a list of possible issues you may have when trying to run the scripts for the first time:
 
 - Insufficient permissions
-  > Use the `chmod 777 fileName` command on each of the bash scripts to update their permissions to a state where you can read, write, and execute them.
+  > Use the `chmod 777 scriptName.sh` command on each of the bash scripts to update their permissions to a state where you can read, write, and execute them.
   
 - Bulkunzipper.sh script not found
   > This occurs because this script uses commands that aren't included in base UNIX. Use the `sudo apt-get install zip unzip` command to install them on your computer.
+
+- Bad interpreter: No such file or directory
+  > Not entirely sure what causes this, but I do know the fix! Use the `sed -i -e 's/\r$//' scriptName.sh` command on each of the bash scripts to fix this issue.
   
