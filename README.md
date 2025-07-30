@@ -71,8 +71,7 @@ sudo apt-get install zip unzip
 
 #### Bad Interpreter
 
-To be completely real, I have no idea why this happens. Truly a mind-boggling occurrence, this one. However, I looked it up on
-Stack Overflow and they had an equally perplexing UNIX command that seems to fix the issue:
+When bash scripts are edited on Windows computers, '\r' return characters are added and tend to be misinterpreted by Linux. This command removes return characters from each of the bash scripts:
 ```
 sed -i -e 's/\r$//' taskreplacer.sh bulkunzipper.sh setup.sh
 ```
